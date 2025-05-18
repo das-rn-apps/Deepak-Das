@@ -10,18 +10,29 @@ interface ExpandableListProps<T> {
 function ExpandableList<T>({
     items,
     renderItem,
-    initialCount = 3,
+    initialCount = 2,
     orientation = 'horizontal',
 }: ExpandableListProps<T>) {
     const [expanded, setExpanded] = useState(false);
 
     const displayedItems = expanded ? items : items.slice(0, initialCount);
 
-    // Determine class for layout based on orientation
+    // Map initialCount to Tailwind grid-cols classes (limit to 6 for example)
+    const gridColsClassMap: Record<number, string> = {
+        1: 'md:grid-cols-1',
+        2: 'md:grid-cols-2',
+        3: 'md:grid-cols-3',
+        4: 'md:grid-cols-4',
+        5: 'md:grid-cols-5',
+        6: 'md:grid-cols-6',
+    };
+
+    const gridColsClass = gridColsClassMap[initialCount] || 'md:grid-cols-3';
+
     const containerClass =
         orientation === 'horizontal'
-            ? `grid gap-8 md:grid-cols-${initialCount}`
-            : 'flex flex-col gap-6';
+            ? `grid gap-5 ${gridColsClass}`
+            : 'flex flex-col gap-5';
 
     return (
         <div>
@@ -46,5 +57,6 @@ function ExpandableList<T>({
         </div>
     );
 }
+
 
 export default ExpandableList;

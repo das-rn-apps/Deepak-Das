@@ -14,17 +14,17 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="fixed w-full bg-white dark:bg-gray-900 shadow-md z-50">
+        <nav className="fixed w-full bg-gray-900 shadow-md z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
                 <div className="text-2xl font-bold cursor-pointer" onClick={() => handleScroll('hero')}>
                     Das
                 </div>
 
-                <ul className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300">
+                <ul className="hidden md:flex space-x-8 text-gray-300">
                     {sections.map((section) => (
                         <li
                             key={section}
-                            className="cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 capitalize"
+                            className="cursor-pointer hover:text-blue-400 capitalize"
                             onClick={() => handleScroll(section)}
                         >
                             {section}
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
                 <div className="relative">
                     <button
                         onClick={() => setProfileOpen((prev) => !prev)}
-                        className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
+                        className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 focus:outline-none"
                         aria-haspopup="true"
                         aria-expanded={profileOpen}
                     >
@@ -59,15 +59,15 @@ const Navbar: React.FC = () => {
                     </button>
 
                     {profileOpen && (
-                        <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50">
-                            <ul className="py-1 text-gray-700 dark:text-gray-300">
+                        <div className="absolute right-0 mt-2 w-40 bg-gray-800 border border-gray-700 rounded-md shadow-lg z-50">
+                            <ul className="py-1 text-gray-300">
                                 <li>
                                     <button
                                         onClick={() => {
                                             alert('View Profile clicked');
                                             setProfileOpen(false);
                                         }}
-                                        className="block px-4 py-2 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                                        className="block px-4 py-2 w-full text-left hover:bg-gray-700"
                                     >
                                         View Profile
                                     </button>
@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
                                             alert('Settings clicked');
                                             setProfileOpen(false);
                                         }}
-                                        className="block px-4 py-2 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                                        className="block px-4 py-2 w-full text-left hover:bg-gray-700"
                                     >
                                         Settings
                                     </button>
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                                             alert('Logout clicked');
                                             setProfileOpen(false);
                                         }}
-                                        className="block px-4 py-2 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-700"
+                                        className="block px-4 py-2 w-full text-left hover:bg-gray-700"
                                     >
                                         Logout
                                     </button>

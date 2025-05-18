@@ -11,7 +11,7 @@ const SocialLinks = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={platform}
-                    className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 text-2xl transition-colors"
+                    className="text-gray-300 hover:text-indigo-400 text-2xl transition-colors"
                 >
                     <Icon />
                 </a>

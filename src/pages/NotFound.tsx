@@ -5,17 +5,17 @@ import { FiHome } from "react-icons/fi";
 
 const NotFound = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen px-6 bg-gradient-to-tr from-indigo-100 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-            <h1 className="text-8xl font-extrabold text-indigo-700 dark:text-indigo-400 drop-shadow-md mb-4 select-none">
+        <div className="flex flex-col items-center justify-center min-h-screen px-6 bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900">
+            <h1 className="text-8xl font-extrabold text-indigo-400 drop-shadow-md mb-4 select-none">
                 404
             </h1>
-            <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6 max-w-md">
+            <p className="text-2xl text-gray-300 mb-6 max-w-md">
                 Oops! The page you’re looking for doesn’t exist or has been moved.
             </p>
 
             {/* SVG illustration */}
             <svg
-                className="w-64 h-48 mb-10 opacity-60 dark:opacity-40"
+                className="w-64 h-48 mb-10 opacity-40"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 400 300"
                 fill="none"

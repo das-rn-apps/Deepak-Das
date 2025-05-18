@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className="bg-white shadow-md dark:bg-gray-900 dark:text-white">
+        <header className=" shadow-md bg-gray-900 text-white">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link to="/" className="text-2xl font-bold text-blue-600">
                     MyPortfolio
