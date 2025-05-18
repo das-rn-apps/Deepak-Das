@@ -22,14 +22,14 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <section id="contact" className="py-20 px-4 bg-gray-800">
             <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
                     Contact Me
                 </h2>
                 <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6 text-left">
                     <div>
-                        <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">
+                        <label htmlFor="name" className="block text-gray-300 mb-2">
                             Name
                         </label>
                         <input
@@ -39,11 +39,11 @@ const Contact = () => {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                            className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-900 border-gray-700 text-white"
                         />
                     </div>
                     <div>
-                        <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">
+                        <label htmlFor="email" className="block  text-gray-300 mb-2">
                             Email
                         </label>
                         <input
@@ -53,11 +53,11 @@ const Contact = () => {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                            className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-900 border-gray-700 text-white"
                         />
                     </div>
                     <div>
-                        <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">
+                        <label htmlFor="message" className="block  text-gray-300 mb-2">
                             Message
                         </label>
                         <textarea
@@ -67,7 +67,7 @@ const Contact = () => {
                             required
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+                            className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-900 border-gray-700 text-white"
                         />
                     </div>
                     <button
@@ -78,7 +78,7 @@ const Contact = () => {
                         {status === 'sending' ? 'Sending...' : 'Send Message'}
                     </button>
                     {status === 'success' && (
-                        <p className="mt-4 text-green-600 dark:text-green-400">Message sent successfully!</p>
+                        <p className="mt-4  text-green-400">Message sent successfully!</p>
                     )}
                 </form>
             </div>
