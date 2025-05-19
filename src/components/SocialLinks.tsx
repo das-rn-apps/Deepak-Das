@@ -1,9 +1,8 @@
-// File: src/components/SocialLinks.tsx
 import { socialLinks } from "../data/socialLinks";
 
 const SocialLinks = () => {
     return (
-        <div className="flex space-x-6 justify-center md:justify-start">
+        <div className="flex justify-center space-x-6">
             {socialLinks.map(({ platform, url, icon: Icon }) => (
                 <a
                     key={platform}

@@ -5,23 +5,23 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 export interface SocialLink {
   platform: string;
   url: string;
-  icon: IconType; // component type, not JSX.Element
+  icon: IconType;
 }
 
 export const socialLinks: SocialLink[] = [
   {
     platform: "GitHub",
-    url: "https://github.com/yourusername",
-    icon: FaGithub, // just the component, no JSX <>
+    url: "https://github.com/Deepak-Das-7",
+    icon: FaGithub,
   },
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/deepak-das-1b5921216",
     icon: FaLinkedin,
   },
   {
     platform: "Twitter",
-    url: "https://twitter.com/yourusername",
+    url: "https://github.com/das-rn-apps",
     icon: FaTwitter,
   },
 ];

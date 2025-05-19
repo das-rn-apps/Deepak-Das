@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import SocialLinks from './components/SocialLinks';
+import Footer from './components/common/Footer';
 
 const App = () => {
   const location = useLocation();
@@ -22,10 +22,7 @@ const App = () => {
         </Routes>
       </main>
       {showLayout && (
-        <footer className="text-center py-6 bg-gray-800 text-gray-400">
-          <SocialLinks />
-          <p className="mt-2">&copy; {new Date().getFullYear()} Deepak Das. All rights reserved.</p>
-        </footer>
+        <Footer />
       )}
     </div>
   );
