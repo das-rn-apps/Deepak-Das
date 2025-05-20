@@ -6,7 +6,7 @@ const Hero = () => {
         >
             {/* Profile Image */}
             <img
-                src="/src/assets/image.png"
+                src="https://avatars.githubusercontent.com/u/180678210?v=4"
                 alt="Deepak Das"
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 border-1 border-blue-500 shadow-lg object-cover"
             />
