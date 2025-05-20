@@ -27,7 +27,7 @@ const Skills = () => {
                         return (
                             <div
                                 key={idx}
-                                className="relative bg-gray-800/60 backdrop-blur-md rounded-xl p-5 flex flex-col items-center shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg border border-gray-700 group"
+                                className="relative border-indigo-600 hover:border-gray-700 bg-gray-900 backdrop-blur-md rounded-xl p-5 flex flex-col items-center shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg border group"
                             >
                                 {/* Glowing border effect */}
                                 <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"></div>

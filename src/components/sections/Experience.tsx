@@ -17,32 +17,43 @@ const Experience = () => {
                     renderItem={({ id, role, company, companyUrl, from, to, description }) => (
                         <div
                             key={id}
-                            className="relative border-l-4 border-indigo-600 pl-8 mb-5 last:mb-0 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer p-6"
+                            className="relative bg-gray-900 border border-indigo-600 hover:border-gray-700 duration-300 rounded-xl p-6 flex flex-col justify-between text-left shadow-sm backdrop-blur-md transition-transform transform hover:-translate-y-2 hover:shadow-lg group border-l-6"
                         >
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0 pointer-events-none"></div>
+
                             {/* Timeline dot */}
-                            <span className="absolute -left-3 top-6 w-5 h-5 bg-indigo-600 rounded-full border-2 border-gray-900"></span>
+                            <span className="absolute -left-3 top-6 w-5 h-5 bg-indigo-600 rounded-full border-2 border-gray-900 z-10"></span>
 
-                            <h3 className="text-2xl font-semibold text-indigo-300 mb-2">
-                                {role}{" "}
-                                <a
-                                    href={companyUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 font-normal hover:underline hover:text-indigo-400 transition"
-                                >
-                                    @ {company}
-                                </a>
-                            </h3>
+                            {/* Content wrapper with higher z-index */}
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-semibold text-indigo-300 mb-2">
+                                    {role}{" "}
+                                    {companyUrl ? (
+                                        <a
+                                            href={companyUrl.startsWith('http') ? companyUrl : `https://${companyUrl}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-400 font-normal hover:underline hover:text-indigo-400 transition"
+                                        >
+                                            @ {company}
+                                        </a>
+                                    ) : (
+                                        <span className="text-gray-400 font-normal">@ {company}</span>
+                                    )}
+                                </h3>
 
-                            <p className="flex items-center gap-2 text-indigo-400 font-medium mb-4 text-sm">
-                                <FaRegCalendarAlt />
-                                <span>{from} - {to}</span>
-                            </p>
+                                <p className="flex items-center gap-2 text-indigo-400 font-medium mb-4 text-sm">
+                                    <FaRegCalendarAlt />
+                                    <span>{from} - {to}</span>
+                                </p>
 
-                            <p className="text-gray-300 leading-relaxed max-w-6xl text-sm">
-                                {description}
-                            </p>
+                                <p className="text-gray-300 leading-relaxed max-w-6xl text-sm">
+                                    {description}
+                                </p>
+                            </div>
                         </div>
+
                     )}
                 />
             </div>
