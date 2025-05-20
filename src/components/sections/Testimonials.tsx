@@ -16,7 +16,7 @@ const Testimonials = () => {
                     renderItem={({ id, name, role, company, message, avatarUrl, github, linkedin }) => (
                         <div
                             key={id}
-                            className="bg-gray-800 rounded-2xl shadow-lg max-w-6xl mx-auto flex flex-col border-b-4 border-indigo-600"
+                            className="w-full max-w-6xl mx-auto bg-gray-800 rounded-2xl shadow-lg flex flex-col border-b-4 border-indigo-600"
                         >
                             {/* Main testimonial message */}
                             <p className="text-cyan-200 italic text-base leading-relaxed mb-4 p-8 h-25">
