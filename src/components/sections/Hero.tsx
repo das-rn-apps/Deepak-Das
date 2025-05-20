@@ -6,7 +6,7 @@ const Hero = () => {
         >
             {/* Profile Image */}
             <img
-                src="/src/assets/image_wbg.png"
+                src={require("../../assets/image.png")}
                 alt="Deepak Das"
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 border-1 border-blue-500 shadow-lg object-cover"
             />
