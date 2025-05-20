@@ -4,7 +4,7 @@ import ExpandableList from '../ExpandableList';
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-20 px-6 bg-gray-900">
+        <section id="testimonials" className="py-20 px-4 bg-gray-900">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-4xl font-extrabold text-white mb-12 tracking-wide">
                     Testimonials
@@ -16,7 +16,7 @@ const Testimonials = () => {
                     renderItem={({ id, name, role, company, message, avatarUrl, github, linkedin }) => (
                         <div
                             key={id}
-                            className="bg-gray-800 rounded-2xl shadow-lg max-w-3xl mx-auto flex flex-col"
+                            className="bg-gray-800 rounded-2xl shadow-lg max-w-6xl mx-auto flex flex-col border-b-4 border-indigo-600"
                         >
                             {/* Main testimonial message */}
                             <p className="text-cyan-200 italic text-base leading-relaxed mb-4 p-8 h-25">
