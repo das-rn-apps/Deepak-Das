@@ -1,3 +1,5 @@
+import profileImage from '../../assets/image.png';
+
 const Hero = () => {
     return (
         <section
@@ -6,9 +8,9 @@ const Hero = () => {
         >
             {/* Profile Image */}
             <img
-                src={require("../../assets/image.png")}
+                src={profileImage}
                 alt="Deepak Das"
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 border-1 border-blue-500 shadow-lg object-cover"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 border border-blue-500 shadow-lg object-cover"
             />
 
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">
