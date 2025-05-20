@@ -18,4 +18,5 @@ export const skills: Skill[] = [
   { name: "Tailwind CSS", level: "Intermediate" },
   { name: "Redux", level: "Intermediate" },
   { name: "Vite", level: "Advanced" },
+  { name: "Python", level: "Beginner" },
 ];

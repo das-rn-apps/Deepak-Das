@@ -12,23 +12,25 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "John Doe",
-    role: "Project Manager",
-    company: "Tech Corp",
+    name: "Sourabh Singh",
+    role: "SDE1",
+    company: "Fenice Energy",
     message: "Great to work with, highly skilled developer.",
-    avatarUrl: "https://randomuser.me/api/portraits/men/1.jpg",
-    github: "johndoe",
-    linkedin: "john-doe-12345",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/C5103AQERlKJh_DKRAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1558427646612?e=1753315200&v=beta&t=_Rr4alkg0naA2yXXtS1TFpVedfpSr9o-mlwEAz1YXg8",
+    github: "sourabh-fenice",
+    linkedin: "sourabh-singh-7a0600187",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    role: "Designer",
-    company: "Creative Studio",
+    name: "Sanju Naskar",
+    role: "DSA",
+    company: "Fenice Energy",
     message: "Delivered high-quality frontend work on time.",
-    avatarUrl: "https://randomuser.me/api/portraits/women/2.jpg",
-    github: "janesmith",
-    linkedin: "jane-smith-67890",
+    avatarUrl:
+      "https://media.licdn.com/dms/image/v2/D5603AQG3Es41GiOcaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719247664526?e=1753315200&v=beta&t=xfLS7lcYnDCXiw8lyH-jwzXANRotglQsgqsH90eQ_0A",
+    github: "SanjuFenice",
+    linkedin: "sanju-naskar",
   },
   {
     id: 3,

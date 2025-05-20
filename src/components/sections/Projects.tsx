@@ -18,7 +18,8 @@ const Projects = () => {
                             key={id}
                             className="bg-gray-900 border border-indigo-600 hover:border-gray-700 duration-300 rounded-xl p-6 flex flex-col justify-between text-left shadow-sm relative backdrop-blur-md transition-transform transform  hover:-translate-y-2 hover:shadow-lg group"
                         >
-                            <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"></div>
+                            <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0 pointer-events-none"></div>
+
                             <div>
                                 <h3 className="text-2xl font-medium text-white mb-2">
                                     {title}
