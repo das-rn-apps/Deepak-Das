@@ -1,35 +1,78 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { testimonials } from '../../data/testimonials';
 import ExpandableList from '../ExpandableList';
 
 const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-20 px-4 bg-gray-800">
-            <div className="max-w-5xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+        <section id="testimonials" className="py-20 px-6 bg-gray-900">
+            <div className="max-w-6xl mx-auto text-center">
+                <h2 className="text-4xl font-extrabold text-white mb-12 tracking-wide">
                     Testimonials
                 </h2>
 
                 <ExpandableList
                     items={testimonials}
-                    initialCount={2}
-                    renderItem={({ id, name, role, company, message, avatarUrl }) => (
+                    initialCount={3}
+                    renderItem={({ id, name, role, company, message, avatarUrl, github, linkedin }) => (
                         <div
                             key={id}
-                            className="bg-gray-900 rounded-lg shadow p-6 flex flex-col items-center"
+                            className="bg-gray-800 rounded-2xl shadow-lg max-w-3xl mx-auto flex flex-col"
                         >
-                            {avatarUrl && (
-                                <img
-                                    src={avatarUrl}
-                                    alt={`${name} avatar`}
-                                    className="w-20 h-20 rounded-full mb-4 object-cover"
-                                />
-                            )}
-                            <p className="text-gray-300 italic mb-4">"{message}"</p>
-                            <p className="font-semibold text-white">{name}</p>
-                            <p className="text-sm text-gray-400">
-                                {role} at {company}
+                            {/* Main testimonial message */}
+                            <p className="text-cyan-200 italic text-base leading-relaxed mb-4 p-8 h-25">
+                                “{message}”
                             </p>
+
+                            {/* Divider line */}
+                            <div className="border-t border-gray-700 mx-4" />
+
+                            {/* Owner details below the message */}
+                            <div className="flex items-center border-gray-700 pt-2 px-8 pb-6">
+                                {avatarUrl ? (
+                                    <img
+                                        src={avatarUrl}
+                                        alt={`${name} avatar`}
+                                        className="w-10 h-10 rounded-full object-cover flex-shrink-0 shadow"
+                                    />
+                                ) : (
+                                    <div className="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0" />
+                                )}
+
+                                <div className="flex flex-col truncate ml-4">
+                                    <p className="text-fuchsia-400 font-semibold text-sm truncate">{name}</p>
+                                    <p className="text-gray-400 text-xs truncate">
+                                        {role} at {company}
+                                    </p>
+                                </div>
+
+                                {/* GitHub icon/link */}
+                                {github && (
+                                    <a
+                                        href={`https://github.com/${github}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="ml-auto text-gray-400 hover:text-white transition-colors duration-200"
+                                        title={`GitHub profile of ${name}`}
+                                    >
+                                        <FaGithub size={20} />
+                                    </a>
+                                )}
+
+                                {/* LinkedIn icon/link */}
+                                {linkedin && (
+                                    <a
+                                        href={`https://linkedin.com/in/${linkedin}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="ml-4 text-gray-400 hover:text-white transition-colors duration-200"
+                                        title={`LinkedIn profile of ${name}`}
+                                    >
+                                        <FaLinkedin size={20} />
+                                    </a>
+                                )}
+                            </div>
                         </div>
+
                     )}
                 />
             </div>

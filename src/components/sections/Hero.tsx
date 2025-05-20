@@ -2,8 +2,15 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-gray-900 to-gray-800"
+            className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-gray-900 to-gray-800 px-4"
         >
+            {/* Profile Image */}
+            <img
+                src="/src/assets/image.png"
+                alt="Deepak Das"
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full mb-6 border-1 border-blue-500 shadow-lg object-cover"
+            />
+
             <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">
                 Hi, I'm <span className="text-blue-500">Deepak Das</span>
             </h1>

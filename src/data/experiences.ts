@@ -4,6 +4,7 @@ export interface Experience {
   id: number;
   role: string;
   company: string;
+  companyUrl: string;
   from: string;
   to: string | "Present";
   description: string;
@@ -12,47 +13,42 @@ export interface Experience {
 export const experience: Experience[] = [
   {
     id: 1,
-    role: "Full Stack Developer",
-    company: "Tech Corp",
-    from: "Jan 2022",
+    role: "Backend Developer",
+    company: "Fenice Energy",
+    companyUrl: "https://feniceenergy.com/",
+    from: "June 2024",
     to: "Present",
     description:
-      "Developed and maintained full-stack applications using React and Node.js.",
+      "Built and maintained RESTful APIs using Node.js, Express, and MongoDB. Utilized TypeScript and JavaScript to write scalable backend services. Collaborated with frontend teams developing apps in React, React Native, and Expo. Used Postman for testing, Git/GitHub for version control, and followed Agile development practices. Contributed to mobile and web integration and deployment pipelines using GitHub Actions.",
   },
   {
     id: 2,
-    role: "Frontend Developer",
-    company: "Web Solutions",
-    from: "Jun 2020",
-    to: "Dec 2021",
+    role: "Database Manager",
+    company: "Fenice Energy",
+    companyUrl: "https://feniceenergy.com/",
+    from: "December 2023",
+    to: "June 2024",
     description:
-      "Worked on responsive UI and improved UX with React and Tailwind CSS.",
+      "Designed, optimized, and managed MongoDB databases for high-performance applications. Integrated backend services with React, React Native, and Vite-based projects. Supported the migration of legacy codebases to TypeScript. Worked closely with developers to resolve data issues and enhance the performance of MERN stack applications using Git and GitHub for collaborative development.",
   },
   {
     id: 3,
-    role: "Junior Developer",
-    company: "Innovate Labs",
-    from: "Jan 2019",
-    to: "May 2020",
+    role: "Support DevOps",
+    company: "Fenice Energy",
+    companyUrl: "https://feniceenergy.com/",
+    from: "August 2023",
+    to: "December 2023",
     description:
-      "Assisted in building frontend components and fixed bugs in legacy projects.",
+      "Supported CI/CD implementation and automated deployments for React and React Native apps using GitHub Actions. Assisted in Docker container setup and Git branching strategies. Gained experience in managing build pipelines for web projects using Vite, and collaborated in Agile sprints to improve the delivery workflow.",
   },
   {
     id: 4,
-    role: "Intern Developer",
-    company: "Startup Hub",
-    from: "Jun 2018",
-    to: "Dec 2018",
+    role: "Tester",
+    company: "Fenice Energy",
+    companyUrl: "https://feniceenergy.com/",
+    from: "June 2023",
+    to: "August 2023",
     description:
-      "Collaborated on small projects, learning software development lifecycle and best practices.",
-  },
-  {
-    id: 5,
-    role: "Freelance Web Developer",
-    company: "Self-Employed",
-    from: "Jan 2017",
-    to: "May 2018",
-    description:
-      "Created websites for small businesses using HTML, CSS, and JavaScript.",
+      "Tested cross-platform applications built with React, React Native, and Expo. Used Postman for API testing for UI validation. Documented bugs, coordinated closely with developers, and contributed to quality assurance across web (Vite + Tailwind CSS) and mobile environments.",
   },
 ];

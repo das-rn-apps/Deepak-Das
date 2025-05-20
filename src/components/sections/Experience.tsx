@@ -14,7 +14,7 @@ const Experience = () => {
                     items={experience}
                     initialCount={2}
                     orientation="vertical"
-                    renderItem={({ id, role, company, from, to, description }) => (
+                    renderItem={({ id, role, company, companyUrl, from, to, description }) => (
                         <div
                             key={id}
                             className="relative border-l-4 border-indigo-600 pl-8 mb-5 last:mb-0 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer p-6"
@@ -24,9 +24,14 @@ const Experience = () => {
 
                             <h3 className="text-2xl font-semibold text-indigo-300 mb-2">
                                 {role}{" "}
-                                <span className="text-gray-400 font-normal">
+                                <a
+                                    href={companyUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 font-normal hover:underline hover:text-indigo-400 transition"
+                                >
                                     @ {company}
-                                </span>
+                                </a>
                             </h3>
 
                             <p className="flex items-center gap-2 text-indigo-400 font-medium mb-4 text-sm">
@@ -34,7 +39,7 @@ const Experience = () => {
                                 <span>{from} - {to}</span>
                             </p>
 
-                            <p className="text-gray-300 leading-relaxed max-w-xl">
+                            <p className="text-gray-300 leading-relaxed max-w-6xl text-sm">
                                 {description}
                             </p>
                         </div>
