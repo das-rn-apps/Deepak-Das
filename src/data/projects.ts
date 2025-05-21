@@ -7,6 +7,11 @@ export interface Project {
   link?: string;
   technologies: string[];
   type: "Website" | "App";
+  shortDescription?: string;
+  longDescription?: string;
+  screenshots?: string[];
+  liveLink?: string;
+  downloadLink?: string;
 }
 
 export const projects: Project[] = [
@@ -33,7 +38,7 @@ export const projects: Project[] = [
     description: "A real-time chat app using Socket.IO and Node.js.",
     link: "https://chatapp.com",
     technologies: [
-      "React-Native",
+      "React Native",
       "Expo",
       "Node.js",
       "Socket.IO",
@@ -41,6 +46,16 @@ export const projects: Project[] = [
       "Express.js",
     ],
     type: "App",
+    shortDescription:
+      "Real-time chat with emojis, media sharing, and user authentication.",
+    longDescription: `This chat app allows users to register, log in, and communicate in real-time using WebSockets.\n\nIt includes features like emoji picker, file sharing, and notifications.`,
+    screenshots: [
+      "/src/assets/image.png",
+      "/src/assets/image.png",
+      "/src/assets/image.png",
+    ],
+    liveLink: "https://chatapp.com",
+    downloadLink: "https://chatapp.com/download",
   },
   {
     id: 3,
@@ -94,6 +109,11 @@ export const projects: Project[] = [
     link: "https://fitnesstracker.com",
     technologies: ["React Native", "Expo", "Firebase"],
     type: "App",
+    shortDescription: "Track workouts and goals, visualize progress over time.",
+    longDescription: `Users can log workouts, set goals, and track their progress with charts and stats.\n\nThe app supports Firebase Auth, Realtime DB, and offline storage.`,
+    screenshots: ["/assets/fitness1.png", "/assets/fitness2.png"],
+    liveLink: "https://fitnesstracker.com",
+    downloadLink: "https://fitnesstracker.com/download",
   },
   {
     id: 9,

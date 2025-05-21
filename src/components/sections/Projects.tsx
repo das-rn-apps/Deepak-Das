@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
 import ExpandableList from '../ExpandableList';
-import { FiExternalLink, FiDownload } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
+import { techLinks } from '../../data/technologies';
 
 const Projects = () => {
     return (
@@ -27,36 +29,54 @@ const Projects = () => {
                                 <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                                     {description}
                                 </p>
+
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {technologies.map((tech, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="text-xs text-gray-300  px-3 py-1 rounded-full bg-indigo-700/70"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
+                                    {technologies.map((tech, idx) => {
+                                        const url = techLinks[tech];
+                                        return url ? (
+                                            <a
+                                                key={idx}
+                                                href={url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xs text-gray-300 px-3 py-1 rounded-full bg-indigo-700/70 hover:bg-indigo-600 transition"
+                                                title={`Go to ${tech} official website`}
+                                            >
+                                                {tech}
+                                            </a>
+                                        ) : (
+                                            <span
+                                                key={idx}
+                                                className="text-xs text-gray-300 px-3 py-1 rounded-full bg-indigo-700/70"
+                                                title="No link available"
+                                            >
+                                                {tech}
+                                            </span>
+                                        );
+                                    })}
                                 </div>
+
                             </div>
-                            {link && (
-                                <a
-                                    href={link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                            {type === 'App' ? (
+                                <Link
+                                    to={`/project/${id}`}
                                     className="mt-4 inline-flex items-center gap-2 self-start text-sm text-gray-300 border border-gray-700 px-4 py-2 rounded-lg hover:bg-gray-800 transition"
                                 >
-                                    {type === 'App' ? (
-                                        <>
-                                            <FiDownload className="text-base" />
-                                            Download App
-                                        </>
-                                    ) : (
-                                        <>
-                                            <FiExternalLink className="text-base" />
-                                            View Website
-                                        </>
-                                    )}
-                                </a>
+                                    <FiExternalLink className="text-base" />
+                                    View App
+                                </Link>
+                            ) : (
+                                link && (
+                                    <a
+                                        href={link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-4 inline-flex items-center gap-2 self-start text-sm text-gray-300 border border-gray-700 px-4 py-2 rounded-lg hover:bg-gray-800 transition"
+                                    >
+                                        <FiExternalLink className="text-base" />
+                                        View Website
+                                    </a>
+                                )
                             )}
                         </div>
                     )}

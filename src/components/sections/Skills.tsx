@@ -1,5 +1,6 @@
 import { skills } from '../../data/skills';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import { techLinks } from '../../data/technologies';
 
 const getStarCount = (level: string): number => {
     switch (level.toLowerCase()) {
@@ -23,13 +24,17 @@ const Skills = () => {
                     {skills.map(({ name, level }, idx) => {
                         const filledStars = getStarCount(level);
                         const totalStars = 5;
+                        const link = techLinks[name] || "#";
 
                         return (
-                            <div
+                            <a
                                 key={idx}
-                                className="relative border-indigo-600 hover:border-gray-700 bg-gray-900 backdrop-blur-md rounded-xl p-5 flex flex-col items-center shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg border group"
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative border-indigo-600 hover:border-gray-700 bg-gray-900 backdrop-blur-md rounded-xl p-5 flex flex-col items-center shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg border group no-underline"
                             >
-                                {/* Glowing border effect */}
+                                {/* Glowing border */}
                                 <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"></div>
 
                                 <div className="relative z-10 text-center">
@@ -45,9 +50,8 @@ const Skills = () => {
                                             )
                                         )}
                                     </div>
-                                    {/* <p className="text-xs text-gray-400 italic">{level}</p> */}
                                 </div>
-                            </div>
+                            </a>
                         );
                     })}
                 </div>

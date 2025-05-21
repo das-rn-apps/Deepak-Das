@@ -5,11 +5,12 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Footer from './components/common/Footer';
+import ProjectDetails from './pages/ProjectDetails';
 
 const App = () => {
   const location = useLocation();
 
-  // List all paths that should show Navbar/Footer
+  // Show Navbar/Footer only on Home
   const showLayout = location.pathname === '/';
 
   return (
@@ -18,12 +19,11 @@ const App = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      {showLayout && (
-        <Footer />
-      )}
+      {showLayout && <Footer />}
     </div>
   );
 };
