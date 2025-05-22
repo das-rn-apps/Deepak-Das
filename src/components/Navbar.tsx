@@ -3,7 +3,7 @@ import React from 'react';
 
 
 const Navbar: React.FC = () => {
-    const sections = ['hero', 'about', 'projects', 'skills', 'experience', 'testimonials', 'contact'];
+    const sections = ['hero', 'skills', 'projects', 'experience', 'testimonials', 'contact'];
 
     const handleScroll = (id: string) => {
         const element = document.getElementById(id);
