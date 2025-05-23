@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Footer from './components/common/Footer';
-import ProjectDetails from './pages/ProjectDetails';
 
 const App = () => {
   const location = useLocation();
@@ -19,7 +18,6 @@ const App = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

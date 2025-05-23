@@ -2,14 +2,11 @@ import { skills } from '../../data/skills';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { techLinks } from '../../data/technologies';
 
-const getStarCount = (level: string): number => {
-    switch (level.toLowerCase()) {
-        case 'beginner': return 1;
-        case 'intermediate': return 3;
-        case 'advanced': return 4;
-        case 'expert': return 5;
-        default: return 2;
-    }
+const levelStars: Record<string, number> = {
+    beginner: 1,
+    intermediate: 3,
+    advanced: 4,
+    expert: 5,
 };
 
 const Skills = () => {
@@ -22,8 +19,7 @@ const Skills = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
                     {skills.map(({ name, level }, idx) => {
-                        const filledStars = getStarCount(level);
-                        const totalStars = 5;
+                        const stars = levelStars[level.toLowerCase()] ?? 2;
                         const link = techLinks[name] || "#";
 
                         return (
@@ -32,21 +28,17 @@ const Skills = () => {
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="relative border-indigo-600 hover:border-gray-700 bg-gray-900 backdrop-blur-md rounded-xl p-5 flex flex-col items-center shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-lg border group no-underline"
+                                className="relative border border-indigo-600 hover:border-gray-700 bg-gray-900 rounded-xl p-5 shadow-md backdrop-blur-md group transform transition hover:-translate-y-2 hover:shadow-lg"
                             >
-                                {/* Glowing border */}
-                                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"></div>
-
+                                <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0" />
                                 <div className="relative z-10 text-center">
-                                    <p className="text-xl font-semibold text-indigo-200 mb-2">
-                                        {name}
-                                    </p>
-                                    <div className="flex justify-center mb-1">
-                                        {[...Array(totalStars)].map((_, i) =>
-                                            i < filledStars ? (
-                                                <FaStar key={i} className="text-purple-400 mx-0.5 text-sm" />
+                                    <p className="text-sm font-semibold text-indigo-200 mb-2">{name}</p>
+                                    <div className="flex justify-center">
+                                        {Array.from({ length: 5 }, (_, i) =>
+                                            i < stars ? (
+                                                <FaStar key={i} className="text-purple-400 text-xs mx-0.5" />
                                             ) : (
-                                                <FaRegStar key={i} className="text-purple-600 mx-0.5 text-sm" />
+                                                <FaRegStar key={i} className="text-purple-600 text-xs mx-0.5" />
                                             )
                                         )}
                                     </div>
